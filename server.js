@@ -3,15 +3,14 @@ const exphbs = require('express-handlebars');
 
 const app = express();
 // setup template engine
-
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
 // setup express static public folder for css and js and images
 app.use(express.static('public'));
-// setup environment variables
-const port = process.env.port ||3000;
+// setup environment virables
+const port = process.env.PORT || 3000;
 
 app.get('/', (req, res) => {
     res.render('home');
